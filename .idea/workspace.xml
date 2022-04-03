@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/teacherController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/generateJwt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/teacherRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/brandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/brandController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/deviceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/deviceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/genderController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/roleController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/typeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error/ApiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/error/ApiError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/ErrorHandlingMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/ErrorHandlingMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/checkRoleMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkRoleMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/adminRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adminRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/brandRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/deviceRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/deviceRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/genderRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/roleRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/typeRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userRouter.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26u6oLTjue3t9oDNQIUwJ2IyO76" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\DIPLOMA\UOKU\server\routes" />
+      <recent name="C:\Users\Admin\Desktop\DIPLOMA\UOKU\server\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="" />
+      <created>1648261297284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648261297284</updated>
+      <workItem from="1648261298471" duration="42000" />
+      <workItem from="1648261444343" duration="73000" />
+      <workItem from="1648261519356" duration="40000" />
+      <workItem from="1648261579350" duration="309000" />
+      <workItem from="1648262000963" duration="94000" />
+      <workItem from="1648262115286" duration="934000" />
+      <workItem from="1648305577287" duration="768000" />
+      <workItem from="1648309984659" duration="1756000" />
+      <workItem from="1648382295483" duration="593000" />
+      <workItem from="1648400539481" duration="7453000" />
+      <workItem from="1648467747460" duration="34085000" />
+      <workItem from="1648646456257" duration="1560000" />
+      <workItem from="1648658653664" duration="7053000" />
+      <workItem from="1648721135619" duration="25307000" />
+      <workItem from="1648991437472" duration="103000" />
+      <workItem from="1648991564013" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

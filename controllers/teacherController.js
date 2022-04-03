@@ -1,6 +1,6 @@
 const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt')
-const {Admin, Teacher} = require('../models/models')
+const {Teacher} = require('../models/models')
 const jwt = require('jsonwebtoken');
 
 const generateJwt = (id, email) => {
@@ -11,33 +11,34 @@ const generateJwt = (id, email) => {
     );
 }
 
-class AdminController {
-    async registration(req, res, next) {
-        const {email, password, name, role} = req.body
+class TeacherController {
+    async create(req, res, next) {
+        const {email, password, name} = req.body
         if (!email || !password) {
             return next(ApiError.badRequest('Некорректный email или password'))
         }
-        const candidate = await Admin.findOne({where: {email}})
+        const candidate = await Teacher.findOne({where: {email}})
         if (candidate) {
             return next(ApiError.badRequest('Пользователь с таким email уже существует'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
-        const admin = await Admin.create({email, name, role, password: hashPassword})
-        const token = generateJwt(admin.id, admin.email, admin.role)
-        return res.json({token})
+        const teacher = await Teacher.create({email, name, password: hashPassword})
+        const token = generateJwt(teacher.id, teacher.email, teacher.name)
+        // return res.json({token})
+        return res.json(teacher)
     }
 
     async login(req, res, next) {
         const {email, password} = req.body
-        const admin = await Admin.findOne({where: {email}})
-        if (!admin) {
+        const teacher = await Teacher.findOne({where: {email}})
+        if (!teacher) {
             return next(ApiError.internal('Пользователь не найден'))
         }
-        let comparePassword = bcrypt.compareSync(password, admin.password)
+        let comparePassword = bcrypt.compareSync(password, teacher.password)
         if (!comparePassword) {
             return next(ApiError.internal('Указан неверный пароль'))
         }
-        const token = generateJwt(admin.id, admin.email, admin.role)
+        const token = generateJwt(teacher.id, teacher.email, teacher.role)
         return res.json({token})
     }
 
@@ -47,17 +48,16 @@ class AdminController {
     }
 
     async getAll(req, res) {
-        const admin = await Admin.findAll({include: Teacher});
-        admin.map((el) => console.log(el.img.toString('base64')));
-        res.json(admin);
+        const teacher = await Teacher.findAll();
+        teacher.map((el) => console.log(el.img.toString('base64')));
+        res.json(teacher);
     }
 
     async getOne(req, res) {
         const {id} = req.params
-        const admin = await Admin.findOne({where: {id}})
-        return res.json(admin)
+        const teacher = await Teacher.findOne({where: {id}})
+        return res.json(teacher)
     }
 }
 
-
-module.exports = new AdminController()
+module.exports = new TeacherController()

@@ -1,10 +1,8 @@
-// const Router = require('express');
-// const router = new Router();
-// const brandContoller = require('../controllers/brandController');
-// const checkRole = require('../middleware/checkRoleMiddleware');
+// const Router = require('express')
+// const router = new Router()
+// const brandController = require('../controllers/brandController')
 //
+// router.post('/', brandController.create)
+// router.get('/', brandController.getAll)
 //
-// router.post('/', checkRole('ADMIN'), brandContoller.create);
-// router.get('/', brandContoller.getAll);
-//
-// module.exports = router;
+// module.exports = router
