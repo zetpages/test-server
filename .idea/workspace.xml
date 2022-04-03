@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/teacherController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/generateJwt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/teacherRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/brandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/brandController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/deviceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/deviceController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/genderController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/roleController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/typeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error/ApiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/error/ApiError.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/ErrorHandlingMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/ErrorHandlingMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/checkRoleMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkRoleMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/adminRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adminRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/brandRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/deviceRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/deviceRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/genderRouter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/roleRouter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/typeRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/userRouter.js" beforeDir="false" />
-    </list>
+    <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -96,6 +66,7 @@
       <workItem from="1648721135619" duration="25307000" />
       <workItem from="1648991437472" duration="103000" />
       <workItem from="1648991564013" duration="9000" />
+      <workItem from="1648991586201" duration="372000" />
     </task>
     <servers />
   </component>
