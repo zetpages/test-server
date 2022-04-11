@@ -9,4 +9,4 @@ router.post('/login', adminController.login)
 router.get('/auth', authMiddleware, adminController.check)
 router.get('/',checkRole('ADMIN'), authMiddleware, adminController.getAll)
 router.get('/:id', checkRole('ADMIN'), authMiddleware, adminController.getOne)
-module.exports = router
+module.exports = router;

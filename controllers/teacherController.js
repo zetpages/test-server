@@ -49,7 +49,6 @@ class TeacherController {
 
     async getAll(req, res) {
         const teacher = await Teacher.findAll();
-        teacher.map((el) => console.log(el.img.toString('base64')));
         res.json(teacher);
     }
 

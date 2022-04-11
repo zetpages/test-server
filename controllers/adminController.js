@@ -48,7 +48,6 @@ class AdminController {
 
     async getAll(req, res) {
         const admin = await Admin.findAll({include: Teacher});
-        admin.map((el) => console.log(el.img.toString('base64')));
         res.json(admin);
     }
 
