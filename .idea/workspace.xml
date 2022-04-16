@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/courseController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/genderController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/groupController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/leadController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/regularClassesController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/studentController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/studentStatusController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/subscriptionController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/taskCategoryController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/taskController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/courseRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/genderRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/groupRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/leadRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/regularClassesRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/studentRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/studentStatusRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/subscriptionRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/taskCategoryRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/taskRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/teacherController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/teacherController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/groupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/groupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/regularClassesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/regularClassesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/studentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/studentController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/adminRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adminRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/teacherRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/teacherRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +42,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.14.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.26" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -113,7 +92,9 @@
       <workItem from="1649274177039" duration="12142000" />
       <workItem from="1649444469190" duration="57603000" />
       <workItem from="1649660232287" duration="111000" />
-      <workItem from="1649660367780" duration="21000" />
+      <workItem from="1649660388022" duration="7235000" />
+      <workItem from="1649752489292" duration="15189000" />
+      <workItem from="1649939907298" duration="29298000" />
     </task>
     <servers />
   </component>

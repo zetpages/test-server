@@ -6,10 +6,10 @@ const Admin = sequelize.define('admin', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     email: {type: DataTypes.STRING, unique: true },
     password: {type: DataTypes.STRING},
-    name: {type: DataTypes.STRING, defaultValue: 'Administrator'},
-    role: {type: DataTypes.STRING, defaultValue: "ADMIN"},
-    img: {type: DataTypes.STRING, defaultValue: ''},
-    phone: {type: DataTypes.STRING, defaultValue: 'set phone'}
+    name: {type: DataTypes.STRING, allowNull: false, defaultValue: 'Administrator'},
+    role: {type: DataTypes.STRING, allowNull: false, defaultValue: "ADMIN"},
+    img: {type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    phone: {type: DataTypes.STRING, allowNull: false, defaultValue: 'set phone'}
 });
 
 const Teacher = sequelize.define('teacher', {
@@ -17,10 +17,10 @@ const Teacher = sequelize.define('teacher', {
     email: {type: DataTypes.STRING, unique: true },
     password: {type: DataTypes.STRING},
     name: {type: DataTypes.STRING, allowNull: false},
-    role: {type: DataTypes.STRING, defaultValue: "TEACHER"},
-    img: {type: DataTypes.STRING, defaultValue: ''},
-    qualification: {type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: []},
-    phone: {type: DataTypes.STRING, defaultValue: 'set phone'}
+    role: {type: DataTypes.STRING, allowNull: false, defaultValue: "TEACHER"},
+    img: {type: DataTypes.STRING, allowNull: false,  defaultValue: ''},
+    qualification: {type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false, defaultValue: []},
+    phone: {type: DataTypes.STRING, allowNull: false, defaultValue: 'set phone'}
 });
 
 const Student = sequelize.define('student', {
@@ -28,20 +28,21 @@ const Student = sequelize.define('student', {
     email: {type: DataTypes.STRING, unique: true },
     password: {type: DataTypes.STRING},
     name: {type: DataTypes.STRING, allowNull: false},
-    parentName: {type: DataTypes.STRING, defaultValue: "set parent name"},
-    role: {type: DataTypes.STRING, defaultValue: "STUDENT"},
+    parentName: {type: DataTypes.STRING, allowNull: false, defaultValue: "parent name"},
+    role: {type: DataTypes.STRING, allowNull: false, defaultValue: "STUDENT"},
     img: {type: DataTypes.STRING, allowNull: false },
-    phone: {type: DataTypes.STRING, defaultValue: 'set student phone'},
-    parentPhone: {type: DataTypes.STRING, defaultValue: 'set parent phone'},
-    discount: {type: DataTypes.INTEGER, defaultValue: 0 }
+    phone: {type: DataTypes.STRING, allowNull: false, defaultValue: 'student phone'},
+    parentPhone: {type: DataTypes.STRING, allowNull: false, defaultValue: 'set parent phone'},
+    birthday: {type: DataTypes.STRING, allowNull: false},
+    balance: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 0},
 });
 
 
 const Lead = sequelize.define('lead', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false},
-    phone: {type: DataTypes.STRING, defaultValue: 'set phone'},
-    note: {type: DataTypes.STRING, defaultValue: 'set  some note'}
+    name: {type: DataTypes.STRING,  allowNull: false},
+    phone: {type: DataTypes.STRING, allowNull: false, defaultValue: 'set phone'},
+    note: {type: DataTypes.STRING, allowNull: false, defaultValue: 'set some note'}
 });
 
 const LeadStatus = sequelize.define('lead_status', {
@@ -56,7 +57,7 @@ const TeacherStudent = sequelize.define('teacher_student',{
 const Task = sequelize.define('task', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     title: { type: DataTypes.STRING, allowNull: false },
-    description: { type: DataTypes.STRING, defaultValue: '' },
+    description: { type: DataTypes.STRING, allowNull: false, defaultValue: 'Описание не задано' },
     expirationDate: { type: DataTypes.DATEONLY, defaultValue: Date.now() }
 });
 
@@ -67,14 +68,24 @@ const TaskCategory = sequelize.define('task_category', {
 
 const Subscription = sequelize.define('subscription', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type:  DataTypes.STRING, unique: true, allowNull: false }
+    name: { type: DataTypes.STRING, unique: true, allowNull: false },
+    cost: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 400 },
+    classCost: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    classAmount: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    classDuration: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    note: {type: DataTypes.STRING, allowNull: false, defaultValue: 'Описание не задано'}
+});
+
+const Billing = sequelize.define('billing', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING, unique: true, allowNull: false }
 });
 
 const Group = sequelize.define('group', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type:  DataTypes.STRING, unique: true, allowNull: false },
-    limit: { type:  DataTypes.INTEGER, defaultValue: 30 },
-    note: {type: DataTypes.STRING, defaultValue: ''}
+    limit: { type:  DataTypes.INTEGER, allowNull: false, defaultValue: 30 },
+    note: {type: DataTypes.STRING, defaultValue: 'Описание не задано'}
 });
 
 const RegularClasses = sequelize.define('regular_classes', { // temp leave than modify and toggle with Group and Course and Level
@@ -83,8 +94,32 @@ const RegularClasses = sequelize.define('regular_classes', { // temp leave than 
     duration: { type:  DataTypes.INTEGER, defaultValue: 90 },
     scheduleStart: { type:  DataTypes.TIME, allowNull: false },
     scheduleEnd: { type:  DataTypes.TIME, allowNull: false },
-    weekDays: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false }
+    weekDays: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false },
+    topic: { type: DataTypes.STRING, allowNull: false,  defaultValue: ''},
+    periodStart: { type: DataTypes.DATEONLY, allowNull: false, defaultValue: DataTypes.NOW },
+    periodEnd: { type: DataTypes.DATEONLY, allowNull: false },
 });
+
+
+const SingleClass = sequelize.define('single_class', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    classState: { type: DataTypes.STRING, allowNull: false, defaultValue: 'запланирован'},
+    day: { type: DataTypes.STRING, allowNull: false},
+    dayDate: { type: DataTypes.DATEONLY, allowNull: false},
+    durationLong: { type:  DataTypes.INTEGER, defaultValue: 90 },
+    timeStart: { type:  DataTypes.TIME, allowNull: false },
+    timeEnd: { type:  DataTypes.TIME, allowNull: false },
+    topicSingle: { type: DataTypes.STRING, allowNull: false,  defaultValue: ''}
+    // classType: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classTime: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classBranch: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classRoom: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classCourse: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classGroup: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classTeacher: { type: DataTypes.STRING, allowNull: false, defaultValue: ''},
+    // classStudents: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false, defaultValue: []}
+});
+
 
 const GroupStatus = sequelize.define('group_status', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -105,12 +140,28 @@ const Branch = sequelize.define('branch', {
 const Room = sequelize.define('room', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type:  DataTypes.STRING, unique: true, allowNull: false },
-    description: { type: DataTypes.STRING, defaultValue: '' },
+    description: { type: DataTypes.STRING, allowNull: false, defaultValue: 'Описание не задано' },
 });
 
 const Course = sequelize.define('course', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name:  { type:  DataTypes.STRING, unique: true, allowNull: false }
+});
+
+const CourseType = sequelize.define('course_type', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name:  { type:  DataTypes.STRING, unique: true, allowNull: false }
+});
+
+const Discount = sequelize.define('discount', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    amount:  { type:  DataTypes.INTEGER,allowNull: false, defaultValue: 0 }
+});
+
+const DiscountType = sequelize.define('discount_type', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name:  { type:  DataTypes.STRING, unique: true, allowNull: false },
+    note: { type: DataTypes.STRING, allowNull: false, defaultValue: 'Описание не задано' }
 });
 
 const Level = sequelize.define('level', {
@@ -143,6 +194,12 @@ const GroupClasses = sequelize.define('group_classes',{
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
+const TeacherClasses = sequelize.define('teacher_classes',{
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+});
+
+
+
 
 
 Admin.hasMany(Teacher);
@@ -163,6 +220,11 @@ Group.belongsTo(Teacher, {foreignKey: 'teacherId'});
 Teacher.belongsToMany(Student, {through: TeacherStudent });
 Student.belongsToMany(Teacher, {through: TeacherStudent });
 
+Teacher.belongsToMany(RegularClasses, {through: TeacherClasses });
+RegularClasses.belongsToMany(Teacher, {through: TeacherClasses });
+
+
+
 
 
 Student.belongsToMany(Group, {through: StudentGroup });
@@ -181,7 +243,6 @@ LeadGroup.belongsTo(Lead);
 Group.hasMany(LeadGroup);
 LeadGroup.belongsTo(Group);
 
-
 GroupStatus.hasMany(Group);
 Group.belongsTo(GroupStatus, {foreignKey: 'groupStatusId'});
 
@@ -194,8 +255,6 @@ Group.belongsTo(Branch, {foreignKey: 'branchId'});
 Branch.hasMany(Room);
 Room.belongsTo(Branch, {foreignKey: 'branchId'});
 
-Room.hasMany(RegularClasses);
-RegularClasses.belongsTo(Room);
 
 Group.belongsToMany(RegularClasses, {through: GroupClasses});
 RegularClasses.belongsToMany(Group, {through: GroupClasses});
@@ -204,27 +263,18 @@ GroupClasses.belongsTo(Group);
 RegularClasses.hasMany(GroupClasses);
 GroupClasses.belongsTo(RegularClasses);
 
+Room.hasMany(RegularClasses);
+RegularClasses.belongsTo(Room);
+
 Course.hasMany(RegularClasses);
 RegularClasses.belongsTo(Course);
 
-// Course.belongsToMany(Group, {through: CourseGroup});
-// Group.belongsToMany(Course, {through: CourseGroup});
-// Course.hasMany(CourseGroup);
-// CourseGroup.belongsTo(Course);
-// Group.hasMany(CourseGroup);
-// CourseGroup.belongsTo(Group);
-
-Level.hasMany(RegularClasses);
-RegularClasses.belongsTo(Level);
+CourseType.hasMany(RegularClasses);
+RegularClasses.belongsTo(CourseType);
 
 
-
-// Course.belongsToMany(Level, {through: CourseLevel});
-// Level.belongsToMany(Course, {through: CourseLevel});
-// Course.hasMany(CourseLevel);
-// CourseLevel.belongsTo(Course);
-// Level.hasMany(CourseLevel);
-// CourseLevel.belongsTo(Level);
+Level.hasMany(Group);
+Group.belongsTo(Level);
 
 
 Gender.hasMany(Admin);
@@ -240,35 +290,75 @@ Lead.belongsTo(Gender, {foreignKey: 'genderId'});
 StudentStatus.hasMany(Student);
 Student.belongsTo(StudentStatus, {foreignKey: 'studentStatusId'});
 
+Billing.hasMany(Subscription);
+Subscription.belongsTo(Billing);
+
 Subscription.hasMany(Student);
 Student.belongsTo(Subscription, {foreignKey: 'subscriptionId'});
 
 TaskCategory.hasMany(Task);
 Task.belongsTo(TaskCategory, {foreignKey: 'taskCategoryId'});
 
+DiscountType.hasMany(Discount);
+Discount.belongsTo(DiscountType);
 
+Discount.hasMany(Student);
+Student.belongsTo(Discount);
 
+RegularClasses.hasMany(SingleClass);
+SingleClass.belongsTo(RegularClasses);
 
+Room.hasMany(SingleClass);
+SingleClass.belongsTo(Room);
 
+Course.hasMany(SingleClass);
+SingleClass.belongsTo(Course);
 
+CourseType.hasMany(SingleClass);
+SingleClass.belongsTo(CourseType);
 
-// create first main tables
 
 
 // (async () => {
 //     await sequelize.sync();
 //
+//     const courseType = await CourseType.create({
+//         id: '1',
+//         name: 'Individual'
+//     });
+//     console.log(courseType);
+//
+//     const discountType = await DiscountType.create({
+//         id: '1',
+//         name: 'Percentage discount'
+//     });
+//     console.log(discountType);
+//
 //     const course = await Course.create({
 //         id: '1',
-//         name: 'FrontEnd01'
+//         name: 'FrontEnd01',
+//         courseTypeId: 1
 //     });
 //     console.log(course);
+//
+//     const discount = await Discount.create({
+//         id: '1',
+//         amount: 20,
+//         discountTypeId: 1
+//     });
+//     console.log(discount);
 //
 //     const level = await Level.create({
 //         id: '1',
 //         name: 'Middle'
 //     });
 //     console.log(level);
+//
+//     const billing = await Billing.create({
+//         id: '1',
+//         name: 'For single class'
+//     });
+//     console.log(billing);
 //
 //
 //     const gender = await Gender.create({
@@ -302,45 +392,17 @@ Task.belongsTo(TaskCategory, {foreignKey: 'taskCategoryId'});
 //     });
 //     console.log(room);
 //
+//
 //     const subscription = await Subscription.create({
 //         id: '1',
-//         name: 'Basic 5$ for class'
+//         name: 'Basic for class',
+//         cost: 10000,
+//         classCost: 1000,
+//         classAmount: 10,
+//         classDuration: 60,
+//         billingId: 1
 //     });
 //     console.log(subscription);
-//
-//     const teacher = await Teacher.create({
-//         id: '1',
-//         email: 'teacher@gmail.com',
-//         password: 'fly',
-//         name: 'Teacher Main',
-//         phone: '99688377373',
-//         genderId: 1,
-//         qualification: ["bachelor", "master"]
-//     });
-//     console.log(teacher);
-//
-//     const group = await Group.create({
-//         id: '1',
-//         name: 'Group01',
-//         limit: 30,
-//         note: 'this is first default created group',
-//         branchId: 1,
-//         groupStatusId: 1,
-//         teacherId: 1
-//     });
-//     console.log(group);
-//
-//     const regularClasses = await RegularClasses.create({
-//         id: '1',
-//         name: 'First Regular Class',
-//         scheduleStart: '13:00:00',
-//         scheduleEnd: '14:30:00',
-//         weekDays: ["Monday", "Friday"],
-//         levelId: 1,
-//         courseId: 1,
-//         roomId: 1
-//     });
-//     console.log(regularClasses);
 //
 //     const admin = Admin.create({
 //         id: '1',
@@ -352,6 +414,43 @@ Task.belongsTo(TaskCategory, {foreignKey: 'taskCategoryId'});
 //     });
 //     console.log(admin)
 //
+//     const teacher = await Teacher.create({
+//         id: '1',
+//         email: 'teacher@gmail.com',
+//         password: 'fly',
+//         name: 'Teacher Main',
+//         phone: '99688377373',
+//         genderId: 1,
+//         qualification: ["bachelor", "master"],
+//         adminId: 1
+//     });
+//     console.log(teacher);
+//
+//
+//     const group = await Group.create({
+//         id: '1',
+//         name: 'Group01',
+//         limit: 30,
+//         note: 'this is first default created group',
+//         branchId: 1,
+//         groupStatusId: 1,
+//         teacherId: 1,
+//         levelId: 1
+//     });
+//     console.log(group);
+//
+//     const regularClasses = await RegularClasses.create({
+//         id: '1',
+//         name: 'First Regular Class',
+//         scheduleStart: '13:00:00',
+//         scheduleEnd: '14:30:00',
+//         weekDays: ["Monday", "Friday"],
+//         courseId: 1,
+//         roomId: 1,
+//         courseTypeId: 1,
+//         topic: 'JS arrays topic'
+//     });
+//     console.log(regularClasses);
 //
 //     const student = await Student.create({
 //         id: '1',
@@ -361,17 +460,17 @@ Task.belongsTo(TaskCategory, {foreignKey: 'taskCategoryId'});
 //         phone: '997334444744',
 //         parentName: "Kendy",
 //         parentPhone: '121209092323',
-//         discount: 20,
+//         discountId: 1,
 //         genderId: 1,
 //         adminId: 1,
-//         img: "0b236f7a-5c6c-4bbe-b03f-7afd67ce1126.jpg",
+//         img: "fbdaec4d-640d-464d-bc9d-66a4db92c86c.jpg",
 //         studentStatusId: 1,
 //         groupId: 1,
-//         subscriptionId: 1
+//         subscriptionId: 1,
+//         birthday: '05/05/2006',
+//         balance: 2000
 //     });
 //     console.log(student);
-//
-//
 //
 //
 //     const teacherStudent = await TeacherStudent.create({
@@ -395,11 +494,16 @@ Task.belongsTo(TaskCategory, {foreignKey: 'taskCategoryId'});
 //     });
 //     console.log(groupClasses);
 //
+//     const teacherClasses =  await  TeacherClasses.create({
+//         id: '1',
+//         regularClassID: 1,
+//         teacherId: 1
+//     })
+//     console.log(teacherClasses)
 // })();
-// console.log(admin);
-
-
-
+//
+//
+//
 
 
 module.exports = {
@@ -423,5 +527,11 @@ module.exports = {
     RegularClasses,
     GroupClasses,
     Level,
-    Gender
+    Gender,
+    CourseType,
+    Discount,
+    DiscountType,
+    Billing,
+    TeacherClasses,
+    SingleClass
 }

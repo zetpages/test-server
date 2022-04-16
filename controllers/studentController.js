@@ -1,7 +1,7 @@
 const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt')
 const {Student, Teacher, Group, Subscription, StudentGroup, TeacherStudent, Course, Level, Branch, Room, StudentStatus,
-    Gender, RegularClasses
+    Gender, RegularClasses, Admin, Discount, DiscountType, CourseType, SingleClass
 } = require('../models/models')
 const jwt = require('jsonwebtoken');
 const uuid = require('uuid')
@@ -31,7 +31,9 @@ class StudentController {
                 adminId,
                 subscriptionId,
                 discount,
-                parentName
+                parentName,
+                birthday,
+                balance
             } = req.body
             if (!email || !password) {
                 return next(ApiError.badRequest('Некорректный email или password'))
@@ -60,8 +62,12 @@ class StudentController {
                 subscriptionId,
                 discount,
                 parentName,
-                img: fileName
+                img: fileName,
+                birthday,
+                balance
             });
+
+
 
             const studentGroup = await StudentGroup.create({groupId, studentId: student.id});
             const studentTeacher = await TeacherStudent.create({teacherId, studentId: student.id});
@@ -103,6 +109,9 @@ class StudentController {
                     model: Subscription,
                 },
                 {
+                    model: Admin
+                },
+                {
                     model: Teacher
                 },
                 {
@@ -111,19 +120,34 @@ class StudentController {
                         {
                             model: RegularClasses,
                             include: [
+                                { model: CourseType },
                                 { model: Course },
-                                { model: Level },
-                                { model: Room }
+                                { model: Room },
+                                {
+                                    model: SingleClass,
+                                    include: [
+                                        { model: CourseType },
+                                        { model: Course },
+                                        { model: Room }
+                                    ]
+                                }
+                                // { model: Group }
                             ]
                         },
-                        { model: Branch }
+                        { model: Level },
+                        { model: Branch },
+                        { model: Teacher }
                     ]
                 },
                 {
-                    model: StudentStatus,
+                    model: StudentStatus
                 },
                 {
-                    model: Gender,
+                    model: Gender
+                },
+                {
+                    model: Discount,
+                    include: {model: DiscountType}
                 }
             ]
         });
@@ -132,7 +156,57 @@ class StudentController {
 
     async getOne(req, res) {
         const {id} = req.params
-        const student = await Student.findOne({where: {id}})
+        const student = await Student.findOne(
+            {
+                where: {id},
+                include:
+                    [
+                        {
+                            model: Subscription,
+                        },
+                        {
+                            model: Admin
+                        },
+                        {
+                            model: Teacher
+                        },
+                        {
+                            model: Group,
+                            include: [
+                                {
+                                    model: RegularClasses,
+                                    include: [
+                                        { model: CourseType },
+                                        { model: Course },
+                                        { model: Room },
+                                        {
+                                            model: SingleClass,
+                                            include: [
+                                                { model: CourseType },
+                                                { model: Course },
+                                                { model: Room }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                { model: Level },
+                                { model: Branch },
+                                { model: Teacher }
+                            ]
+                        },
+                        {
+                            model: StudentStatus
+                        },
+                        {
+                            model: Gender
+                        },
+                        {
+                            model: Discount,
+                            include: {model: DiscountType}
+                        }
+                    ]
+                }
+            )
         return res.json(student)
     }
 

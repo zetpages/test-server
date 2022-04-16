@@ -20,15 +20,14 @@ class GroupController {
                         model: RegularClasses,
                         include: [
                             { model: Course },
-                            { model: Level },
                             { model: Room }
                         ]
                     },
                     { model: Teacher },
-                    { model:  Branch }
+                    { model:  Branch },
+                    { model:  Level }
                 ]});
         return res.json(group);
     }
 }
-
 module.exports = new GroupController();
