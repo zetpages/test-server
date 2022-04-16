@@ -136,7 +136,11 @@ class StudentController {
                         },
                         { model: Level },
                         { model: Branch },
-                        { model: Teacher }
+                        { model: Teacher },
+                        {
+                            model: StudentGroup,
+                            include: { model: Student}
+                        }
                     ]
                 },
                 {
