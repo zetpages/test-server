@@ -28,5 +28,4 @@ router.use('/regular-classes', regularClassesRouter);
 router.use('/gender', genderRouter);
 
 
-
 module.exports = router;

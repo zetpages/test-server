@@ -78,8 +78,7 @@ class RegularClassesController {
     }
 
     async getAll(req, res) {
-        let regularClasses = await RegularClasses.findAll();
-        return res.json(regularClasses, { include:
+        let regularClasses = await RegularClasses.findAll({ include:
                 [
                     { model: Room },
                     { model: Course },
@@ -88,6 +87,16 @@ class RegularClassesController {
                     // { model: Group }
                 ]
         });
+        // return res.json(regularClasses, { include:
+        //         [
+        //             { model: Room },
+        //             { model: Course },
+        //             { model: CourseType },
+        //             { model: SingleClass }
+        //             // { model: Group }
+        //         ]
+        // });
+        return res.json(regularClasses);
     }
 }
 

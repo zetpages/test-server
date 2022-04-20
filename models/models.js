@@ -57,6 +57,7 @@ const TeacherStudent = sequelize.define('teacher_student',{
 const Task = sequelize.define('task', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     title: { type: DataTypes.STRING, allowNull: false },
+    label: { type: DataTypes.STRING, allowNull: false },
     description: { type: DataTypes.STRING, allowNull: false, defaultValue: 'Описание не задано' },
     expirationDate: { type: DataTypes.DATEONLY, defaultValue: Date.now() }
 });
