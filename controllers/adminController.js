@@ -1,6 +1,6 @@
 const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt')
-const {Admin, Teacher} = require('../models/models')
+const {Admin, Teacher, Gender} = require('../models/models')
 const jwt = require('jsonwebtoken');
 
 const generateJwt = (id, email) => {
@@ -47,7 +47,10 @@ class AdminController {
     }
 
     async getAll(req, res) {
-        const admin = await Admin.findAll({include: Teacher});
+        const admin = await Admin.findAll({include: [
+                {model: Teacher},
+                {model: Gender}
+            ]});
         res.json(admin);
     }
 

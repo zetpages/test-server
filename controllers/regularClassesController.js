@@ -83,7 +83,7 @@ class RegularClassesController {
                     { model: Room },
                     { model: Course },
                     { model: CourseType },
-                    { model: SingleClass }
+                    { model: SingleClass, include: [{model: Course}]}
                     // { model: Group }
                 ]
         });

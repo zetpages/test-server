@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/singleClassesController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/regularClassesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/regularClassesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/taskCategoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taskCategoryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taskController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/taskCategoryRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/taskCategoryRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +98,9 @@
       <workItem from="1650193585116" duration="672000" />
       <workItem from="1650226480456" duration="3979000" />
       <workItem from="1650383614969" duration="649000" />
-      <workItem from="1650458797838" duration="6129000" />
+      <workItem from="1650458797838" duration="7088000" />
+      <workItem from="1650567616852" duration="6548000" />
+      <workItem from="1650637711976" duration="4810000" />
     </task>
     <servers />
   </component>
