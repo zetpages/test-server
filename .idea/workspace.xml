@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f57163-d371-4171-a0a6-601f89d91504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/singleClassesController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/regularClassesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/regularClassesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/taskCategoryRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/taskCategoryRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/studentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/studentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +101,9 @@
       <workItem from="1650458797838" duration="7088000" />
       <workItem from="1650567616852" duration="6548000" />
       <workItem from="1650637711976" duration="4810000" />
+      <workItem from="1650854914100" duration="1069000" />
+      <workItem from="1650916794838" duration="1890000" />
+      <workItem from="1651008098798" duration="1461000" />
     </task>
     <servers />
   </component>

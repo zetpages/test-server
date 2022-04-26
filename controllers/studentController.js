@@ -30,7 +30,7 @@ class StudentController {
                 genderId,
                 adminId,
                 subscriptionId,
-                discount,
+                discountId,
                 parentName,
                 birthday,
                 balance
@@ -60,7 +60,7 @@ class StudentController {
                 genderId,
                 adminId,
                 subscriptionId,
-                discount,
+                discountId,
                 parentName,
                 img: fileName,
                 birthday,
@@ -113,6 +113,9 @@ class StudentController {
                 },
                 {
                     model: Teacher
+                },
+                {
+                    model: Discount
                 },
                 {
                     model: Group,
@@ -173,6 +176,9 @@ class StudentController {
                         },
                         {
                             model: Teacher
+                        },
+                        {
+                            model: Discount
                         },
                         {
                             model: Group,
